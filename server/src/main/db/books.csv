@@ -1,0 +1,45 @@
+bookId,title, author, description, price, rating, is_public, is_featured, category_id
+1001,The Iliad,Homer,the-iliad.gif,699,5,TRUE, FALSE,1008
+1002,Mere Christianity,C. S. Lewis,merechristanity.jpg,1529,5,FALSE, FALSE,1001
+1003,Moby Dick,Herman Melville,moby-dick.gif,699,5,TRUE, FALSE,1008
+1004,Beauty and the Beast,Jeanne-Marie Leprince de Beaumont,beautyandbeast.jpg,2500,5,TRUE, FALSE,1008
+1005,The Canterbury Tales,Geoffrey Chaucer,canterburytales.webp,1100,5,FALSE, FALSE,1001
+1006,Frankenstein,Mary Shelly,frankenstein.webp,795,5,FALSE, FALSE,1008
+1007,Pride and Prejudice,Jane Austen,prideandprejudice.jpg,799,5,FALSE, FALSE,1001
+1008,The Lord of the Rings,J. R. R. Tolkien,LOTR.webp,2499,5,FALSE, FALSE,1001
+1009,The Wonderful Wizard of Oz,L. Frank Baum,wizofoz.jpg,999,5,FALSE, FALSE,1001
+1010,Paradise Lost,John Milton,paradiselost.jpg,10.95,5,FALSE, FALSE,1008
+1011,The Republic,Plato,therepublic.webp,1300,5,FALSE, FALSE,1001
+1012,The Art of War,Sun Tzu,artofwar.webp,995,5,FALSE, FALSE,1001
+1013,Gullivers Travels,Jonathan Swift,gulliverstravel.webp,795,5,FALSE, FALSE,1001
+1014,The Brothers Karamazov,Fyodor Dostoevsky,the-brothers-karamazov.gif,4800,5,FALSE, FALSE,1001
+1015,Almost There,Farrah Rochon,almostthere.webp,1599,5,FALSE, FALSE,1002
+1016,Fairy Tale,Stephen King,fairytale.webp,2275,5,FALSE, FALSE,1002
+1017,House of Salt and Sorrows,Erin A. Craig,houseofsalt.webp,1199,5,FALSE, FALSE,1002
+1018,Blood & Honey,Shelby Mahurin,bloodandhoney.webp,1149,5,FALSE, FALSE,1002
+1019,Gods & Monsters,Shelby Mahurin,godsandmonsters.webp,1499,5,FALSE, FALSE,1002
+1020,Treasure State: A Cassie Dewell Novel,C. J. Box,treasurestate.webp,1375,6,FALSE, FALSE,1003
+1021,Desperation in Death,J. D. Robb,did.webp,1499,7,FALSE, FALSE,1003
+1022,The Stolen Hours,Allen Eskens,tsh.webp,1349,8,FALSE, FALSE,1003
+1023,The Bullet That Missed,Richard Osman,tbtm.webp,2399,9,FALSE, FALSE,1003
+1024,What Happened to the Bennetts,Lisa Scottoline,whttb.webp,699,10,FALSE, FALSE,1003
+1025,Curse of Shadows and Thorns,LJ Andrews,cosat.webp,2699,11,FALSE, FALSE,1004
+1026,Howl at the Moon,Deborah Wilde,hatm.webp,499,12,FALSE, FALSE,1004
+1027,Beauty and the Goblin King,Lidiya Foxglove,batgk.webp,735,13,FALSE, FALSE,1004
+1028,Once Upon A Time,Demelza Carlton,ouat.webp,1235,14,FALSE, FALSE,1004
+1029,Second Star to the Left,Megan Van Dyke,ssttl.webp,1499,15,FALSE, FALSE,1004
+1030,Mrs. Sherlock Holmes,Brad Ricca,sh.jpg,446,16,FALSE, FALSE,1005
+1031,Too Scared to Tell,Cathy Glass,tstt.webp,801,17,FALSE, FALSE,1005
+1032,The ISIS Hostage,Puk Damsgard,tis.jpg,715,18,FALSE, FALSE,1005
+1033,Mountain of the Dead,Keith McCloskey,motd.jpg,773,19,FALSE, FALSE,1005
+1034,The Adventurers Son : A Memoir,Roman Dial,tas.jpg,493,20,FALSE, FALSE,1005
+1035,The Splendid and the Vile,Erik Larson,tsatv.jpg,605,21,FALSE, FALSE,1006
+1036,I Alone Can Fix It,"Carol Leonnig,�Philip Rucker",iacfi.webp,1894,22,FALSE, FALSE,1006
+1037,From Babylon to Timbuktu,Rudolph R. Windsor,fbtt.jpg,1395,23,FALSE, FALSE,1006
+1038,The Silk Roads : A New History of the World,Peter Frankopan,tsr.jpg,2200,24,FALSE, FALSE,1006
+1039,Every Drop of Blood,Edward Achorn,edob.webp,2800,25,FALSE, FALSE,1006
+1040,Miles Behind Us,Charlie Adlard,mbu.jpg,1499,26,FALSE, FALSE,1007
+1041,The Walking Dead: Rise of the Governor,Robert Kirkman,twd.jpg,2499,27,FALSE, FALSE,1007
+1042,Later,Stephen King,later.jpg,1495,28,FALSE, FALSE,1007
+1043,Hannibal Rising,Thomas Harris,hr.webp,899,29,FALSE, FALSE,1007
+1044,End of Watch,Stephen King,eow.jpg,1160,30,FALSE, FALSE,1007
