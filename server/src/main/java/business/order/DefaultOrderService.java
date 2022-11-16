@@ -25,7 +25,7 @@ public class DefaultOrderService implements OrderService {
 	}
 
 	@Override
-    public long placeOrder(CustomerForm customerForm, ShoppingCart cart) {
+	public long placeOrder(CustomerForm customerForm, ShoppingCart cart) {
 
 		validateCustomer(customerForm);
 		validateCart(cart);
@@ -38,7 +38,7 @@ public class DefaultOrderService implements OrderService {
 
 	private void validateCustomer(CustomerForm customerForm) {
 
-    	String name = customerForm.getName();
+		String name = customerForm.getName();
 
 		if (name == null || name.equals("") || name.length() > 45) {
 			throw new ApiException.InvalidParameter("Invalid name field");
@@ -66,7 +66,7 @@ public class DefaultOrderService implements OrderService {
 			throw new ApiException.InvalidParameter("Cart is empty.");
 		}
 
-		cart.getItems().forEach(item-> {
+		cart.getItems().forEach(item -> {
 			if (item.getQuantity() < 0 || item.getQuantity() > 99) {
 				throw new ApiException.InvalidParameter("Invalid quantity");
 			}

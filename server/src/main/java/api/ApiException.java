@@ -10,4 +10,14 @@ public class ApiException extends RuntimeException {
         super(message, cause);
     }
 
+    public static class InvalidParameter extends ApiException {
+        public InvalidParameter(String message) {
+            super(message);
+        }
+
+        public InvalidParameter(String message, Throwable t) {
+            super(message, t);
+        }
+    }
+
 }

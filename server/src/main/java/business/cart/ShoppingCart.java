@@ -9,9 +9,9 @@ import java.util.List;
 /**
  * A shopping cart arrives in an order form from the client.
  * This class holds the de-serialized JSON data.
- *
+ * <p>
  * (We ignore any extra elements that the client sends
- *  that this class does not require.).
+ * that this class does not require.).
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ShoppingCart {
@@ -46,8 +46,8 @@ public class ShoppingCart {
 	@JsonIgnore
 	public int getComputedSubtotal() {
 		return items.stream()
-			.mapToInt(item -> item.getQuantity() * item.getBookForm().getPrice())
-			.sum();
+				.mapToInt(item -> item.getQuantity() * item.getBookForm().getPrice())
+				.sum();
 	}
 
 }

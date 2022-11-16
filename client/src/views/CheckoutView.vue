@@ -38,15 +38,13 @@ const months: string[] = [
 ];
 
 const form = reactive({
-  name: "",
-  address: "",
-  phone: "",
-  email: "",
-  ccNumber: "",
+  name: "asdsda",
+  address: "asadsdas",
+  phone: "5405578686",
+  email: "asds@asda.com",
+  ccNumber: "4444333322221111",
   ccExpiryMonth: new Date().getMonth() + 1,
   ccExpiryYear: new Date().getFullYear(),
-  // ccExpiryMonth: "",
-  // ccExpiryYear: "",
   checkoutStatus: "",
 });
 
@@ -110,12 +108,24 @@ async function submitOrder() {
     form.checkoutStatus = "ERROR";
   } else {
     form.checkoutStatus = "PENDING";
-    setTimeout(() => {
-      form.checkoutStatus = "OK";
-      setTimeout(() => {
+    await cartStore
+      .placeOrder({
+        name: form.name,
+        address: form.address,
+        phone: form.phone,
+        email: form.email,
+        ccNumber: form.ccNumber,
+        ccExpiryMonth: form.ccExpiryMonth,
+        ccExpiryYear: form.ccExpiryYear,
+      })
+      .then(() => {
+        form.checkoutStatus = "OK";
         router.push({ name: "confirmation-view" });
-      }, 1000);
-    }, 1000);
+      })
+      .catch((reason) => {
+        form.checkoutStatus = "SERVER_ERROR";
+        console.log("Error placing order", reason);
+      });
   }
 }
 

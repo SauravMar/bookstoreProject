@@ -9,25 +9,25 @@ import business.customer.CustomerForm;
  */
 public class OrderForm {
 
-	private ShoppingCart cart;
-	private CustomerForm customerForm;
+    private ShoppingCart cart;
+    private CustomerForm customerForm;
 
-	public OrderForm() {
-	}
+    public OrderForm() {
+    }
 
-	public ShoppingCart getCart() {
-		return cart;
-	}
+    public ShoppingCart getCart() {
+        return cart;
+    }
 
-	public void setCart(ShoppingCart cart) {
-		this.cart = cart;
-	}
+    public void setCart(ShoppingCart cart) {
+        this.cart = cart;
+    }
 
-	public CustomerForm getCustomerForm() {
-		return customerForm;
-	}
+    public CustomerForm getCustomerForm() {
+        return customerForm;
+    }
 
-	public void setCustomerForm(CustomerForm customerForm) {
-		this.customerForm = customerForm;
-	}
+    public void setCustomerForm(CustomerForm customerForm) {
+        this.customerForm = customerForm;
+    }
 }

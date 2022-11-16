@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { ShoppingCart } from "@/models/ShoppingCart";
-import { BookItem } from "@/types";
+import { BookItem, CustomerForm, OrderDetails } from "@/types";
+import { apiUrl } from "@/services/ApiService";
 
 const CART_STORAGE_KEY = "ShoppingCart";
 
@@ -36,6 +37,25 @@ export const useCartStore = defineStore("CartStore", {
     updateBookQuantity(book: BookItem, quantity: number) {
       this.cart.update(book, quantity);
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(this.cart));
+    },
+    async placeOrder(customerForm: CustomerForm) {
+      const order = { cart: this.cart, customerForm: customerForm };
+      console.log(JSON.stringify(order));
+
+      const url = apiUrl + "orders";
+      const orderDetails: OrderDetails = await fetch(url, {
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrer: "client",
+        method: "POST", // or 'PUT'
+        body: JSON.stringify(order),
+      }).then((response) => response.json());
+      this.clearCart();
     },
   },
 });

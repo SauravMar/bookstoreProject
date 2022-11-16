@@ -1,23 +1,23 @@
 /**
  * BSD 3-Clause License
- *
+ * <p>
  * Copyright (C) 2018 Steven Atkinson <steven@nowucca.com>
  * All rights reserved.
- *
+ * <p>
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- *
+ * <p>
  * * Redistributions of source code must retain the above copyright notice, this
- *   list of conditions and the following disclaimer.
- *
+ * list of conditions and the following disclaimer.
+ * <p>
  * * Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
- *
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ * <p>
  * * Neither the name of the copyright holder nor the names of its
- *   contributors may be used to endorse or promote products derived from
- *   this software without specific prior written permission.
- *
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ * <p>
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -42,11 +42,11 @@ public class CustomerForm {
 
     private String name;
 
-	private String address;
+    private String address;
 
     private String phone;
 
-	private String email;
+    private String email;
 
     private String ccNumber;
 
@@ -55,76 +55,76 @@ public class CustomerForm {
     private String ccExpiryYear;
 
     @JsonCreator
-	public CustomerForm(
-		@JsonProperty("name") String name,
-		@JsonProperty("address") String address,
-		@JsonProperty("phone") String phone,
-		@JsonProperty("email") String email,
-		@JsonProperty("ccNumber") String ccNumber,
-		@JsonProperty("ccExpiryMonth") String ccExpiryMonth,
-		@JsonProperty("ccExpiryYear") String ccExpiryYear) {
-		this.name = name;
-		this.address = address;
-		this.phone = phone;
-		this.email = email;
-		this.ccNumber = ccNumber;
-		this.ccExpiryMonth = ccExpiryMonth;
-		this.ccExpiryYear = ccExpiryYear;
-	}
+    public CustomerForm(
+            @JsonProperty("name") String name,
+            @JsonProperty("address") String address,
+            @JsonProperty("phone") String phone,
+            @JsonProperty("email") String email,
+            @JsonProperty("ccNumber") String ccNumber,
+            @JsonProperty("ccExpiryMonth") String ccExpiryMonth,
+            @JsonProperty("ccExpiryYear") String ccExpiryYear) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.ccNumber = ccNumber;
+        this.ccExpiryMonth = ccExpiryMonth;
+        this.ccExpiryYear = ccExpiryYear;
+    }
 
-	public String getName() {
+    public String getName() {
         return name;
     }
 
-	public String getAddress() {
-		return address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
     public String getPhone() {
         return phone;
     }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getCcNumber() {
+    public String getCcNumber() {
         return ccNumber;
     }
 
-	public String getCcExpiryMonth() {
-		return ccExpiryMonth;
-	}
+    public String getCcExpiryMonth() {
+        return ccExpiryMonth;
+    }
 
-	public String getCcExpiryYear() {
-		return ccExpiryYear;
-	}
+    public String getCcExpiryYear() {
+        return ccExpiryYear;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setCcNumber(String ccNumber) {
-		this.ccNumber = ccNumber;
-	}
+    public void setCcNumber(String ccNumber) {
+        this.ccNumber = ccNumber;
+    }
 
-	public void setCcExpiryMonth(String ccExpiryMonth) {
-		this.ccExpiryMonth = ccExpiryMonth;
-	}
+    public void setCcExpiryMonth(String ccExpiryMonth) {
+        this.ccExpiryMonth = ccExpiryMonth;
+    }
 
-	public void setCcExpiryYear(String ccExpiryYear) {
-		this.ccExpiryYear = ccExpiryYear;
-	}
+    public void setCcExpiryYear(String ccExpiryYear) {
+        this.ccExpiryYear = ccExpiryYear;
+    }
 }

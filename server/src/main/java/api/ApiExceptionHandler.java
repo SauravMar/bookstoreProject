@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @Provider
 @Priority(Priorities.USER)
 public class ApiExceptionHandler implements
-	ExceptionMapper<ApiException> {
+		ExceptionMapper<ApiException> {
 
 	private Logger logger = Logger.getLogger(ApiExceptionHandler.class.getName());
 
@@ -35,8 +35,8 @@ public class ApiExceptionHandler implements
 			writer.append(status.getReasonPhrase()).append(" ").append(String.valueOf(status.getStatusCode())).append("\n\n").append(exception.getMessage());
 			return Response.status(status).entity(writer.getBuffer().toString()).type(MediaType.TEXT_PLAIN).build();
 		} catch (Exception e) {
-			logger.log(Level.INFO, e, ()->"Problem attempting to map an Exception to a json response");
-			logger.log(Level.INFO, exception, ()->"Original Exception");
+			logger.log(Level.INFO, e, () -> "Problem attempting to map an Exception to a json response");
+			logger.log(Level.INFO, exception, () -> "Original Exception");
 			return Response.serverError().build();
 		}
 	}
