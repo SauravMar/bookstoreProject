@@ -4,7 +4,7 @@ plugins {
 }
 
 war {
-    archiveName = 'SauravBookstoreStore.war'
+    archiveName = 'SauravBookstoreOrder.war'
 }
 
 //sourceCompatibility = 11

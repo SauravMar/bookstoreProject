@@ -624,7 +624,9 @@ label {
                 Order placed...
               </div>
 
-              <div v-else>An unexpected error occurred, please try again.</div>
+              <div v-else class="error-status">
+                An unexpected error occurred, please try again.
+              </div>
             </section>
           </form>
         </div>
