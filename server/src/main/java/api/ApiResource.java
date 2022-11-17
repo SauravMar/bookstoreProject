@@ -144,7 +144,7 @@ public class ApiResource {
 
         try {
             long orderId = orderService.placeOrder(orderForm.getCustomerForm(), orderForm.getCart());
-            throw new ApiException.InvalidParameter("Transactions have not been implemented yet.");
+            throw new ApiException.InvalidParameter("Order Created");
 
             // NOTE: MORE CODE PROVIDED NEXT PROJECT
 
