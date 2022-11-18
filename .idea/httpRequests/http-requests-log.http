@@ -1,0 +1,330 @@
+POST http://localhost:8080/SauravBookstoreOrder/api/orders
+Content-Type: application/json
+
+{
+    "cart": {
+        "itemArray": [
+            {
+                "book": {
+                    "bookId": 1023,
+                    "title": "Beauty and the Goblin King",
+                    "author": "Lidiya Foxglove",
+                    "price": 735,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "batgk.webp",
+                    "rating": 5
+                },
+                "quantity": 7
+            },
+            {
+                "book": {
+                    "bookId": 1022,
+                    "title": "Howl at the Moon",
+                    "author": "Deborah Wilde",
+                    "price": 499,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "hatm.webp",
+                    "rating": 8
+                },
+                "quantity": 9
+            },
+            {
+                "book": {
+                    "bookId": 1021,
+                    "title": "Curse of Shadows and Thorns",
+                    "author": "LJ Andrews",
+                    "price": 2699,
+                    "isPublic": true,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "cosat.webp",
+                    "rating": 6
+                },
+                "quantity": 6
+            },
+            {
+                "book": {
+                    "bookId": 1020,
+                    "title": "Once Upon A Time",
+                    "author": "Demelza Carlton",
+                    "price": 1235,
+                    "isPublic": false,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "ouat.webp",
+                    "rating": 8
+                },
+                "quantity": 7
+            }
+        ]
+    },
+    "customerForm": {
+        "name": "adsad",
+        "address": "sdfgsdsaf",
+        "phone": "(540) 757-O663",
+        "email": "asds@asadasdda.com",
+        "ccNumber": "4444333322221111",
+        "ccExpiryMonth": 12,
+        "ccExpiryYear": 2022
+    }
+}
+
+<> 2022-11-17T201531.400.txt
+
+###
+
+POST http://localhost:8080/SauravBookstoreOrder/api/orders
+Content-Type: application/json
+
+{
+    "cart": {
+        "itemArray": [
+            {
+                "book": {
+                    "bookId": 1023,
+                    "title": "Beauty and the Goblin King",
+                    "author": "Lidiya Foxglove",
+                    "price": 735,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "batgk.webp",
+                    "rating": 5
+                },
+                "quantity": 7
+            },
+            {
+                "book": {
+                    "bookId": 1022,
+                    "title": "Howl at the Moon",
+                    "author": "Deborah Wilde",
+                    "price": 499,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "hatm.webp",
+                    "rating": 8
+                },
+                "quantity": 9
+            },
+            {
+                "book": {
+                    "bookId": 1021,
+                    "title": "Curse of Shadows and Thorns",
+                    "author": "LJ Andrews",
+                    "price": 2699,
+                    "isPublic": true,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "cosat.webp",
+                    "rating": 6
+                },
+                "quantity": 6
+            },
+            {
+                "book": {
+                    "bookId": 1020,
+                    "title": "Once Upon A Time",
+                    "author": "Demelza Carlton",
+                    "price": 1235,
+                    "isPublic": false,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "ouat.webp",
+                    "rating": 8
+                },
+                "quantity": 7
+            }
+        ]
+    },
+    "customerForm": {
+        "name": "adsad",
+        "address": "sdfgsdsaf",
+        "phone": "(540) 757-@663",
+        "email": "asds@asadasdda.com",
+        "ccNumber": "4444333322221111",
+        "ccExpiryMonth": 12,
+        "ccExpiryYear": 2022
+    }
+}
+
+<> 2022-11-17T201515.400.txt
+
+###
+
+POST http://localhost:8080/SauravBookstoreOrder/api/orders
+Content-Type: application/json
+
+{
+    "cart": {
+        "itemArray": [
+            {
+                "book": {
+                    "bookId": 1023,
+                    "title": "Beauty and the Goblin King",
+                    "author": "Lidiya Foxglove",
+                    "price": 735,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "batgk.webp",
+                    "rating": 5
+                },
+                "quantity": 7
+            },
+            {
+                "book": {
+                    "bookId": 1022,
+                    "title": "Howl at the Moon",
+                    "author": "Deborah Wilde",
+                    "price": 499,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "hatm.webp",
+                    "rating": 8
+                },
+                "quantity": 9
+            },
+            {
+                "book": {
+                    "bookId": 1021,
+                    "title": "Curse of Shadows and Thorns",
+                    "author": "LJ Andrews",
+                    "price": 2699,
+                    "isPublic": true,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "cosat.webp",
+                    "rating": 6
+                },
+                "quantity": 6
+            },
+            {
+                "book": {
+                    "bookId": 1020,
+                    "title": "Once Upon A Time",
+                    "author": "Demelza Carlton",
+                    "price": 1235,
+                    "isPublic": false,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "ouat.webp",
+                    "rating": 8
+                },
+                "quantity": 7
+            }
+        ]
+    },
+    "customerForm": {
+        "name": "",
+        "address": "sdfgsdsaf",
+        "phone": "(540) 757-8663",
+        "email": "asds@asadasdda.com",
+        "ccNumber": "4444333322221111",
+        "ccExpiryMonth": 12,
+        "ccExpiryYear": 2022
+    }
+}
+
+<> 2022-11-17T201440.400.txt
+
+###
+
+POST http://localhost:8080/SauravBookstoreOrder/api/orders
+Content-Type: application/json
+
+{
+    "cart": {
+        "itemArray": [
+            {
+                "book": {
+                    "bookId": 1023,
+                    "title": "Beauty and the Goblin King",
+                    "author": "Lidiya Foxglove",
+                    "price": 735,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "batgk.webp",
+                    "rating": 5
+                },
+                "quantity": 7
+            },
+            {
+                "book": {
+                    "bookId": 1022,
+                    "title": "Howl at the Moon",
+                    "author": "Deborah Wilde",
+                    "price": 499,
+                    "isPublic": true,
+                    "isFeatured": true,
+                    "categoryId": 1004,
+                    "description": "hatm.webp",
+                    "rating": 8
+                },
+                "quantity": 9
+            },
+            {
+                "book": {
+                    "bookId": 1021,
+                    "title": "Curse of Shadows and Thorns",
+                    "author": "LJ Andrews",
+                    "price": 2699,
+                    "isPublic": true,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "cosat.webp",
+                    "rating": 6
+                },
+                "quantity": 6
+            },
+            {
+                "book": {
+                    "bookId": 1020,
+                    "title": "Once Upon A Time",
+                    "author": "Demelza Carlton",
+                    "price": 1235,
+                    "isPublic": false,
+                    "isFeatured": false,
+                    "categoryId": 1004,
+                    "description": "ouat.webp",
+                    "rating": 8
+                },
+                "quantity": 7
+            }
+        ]
+    },
+    "customerForm": {
+        "name": "",
+        "address": "sdfgsdsaf",
+        "phone": "(540) 757-8663",
+        "email": "asds@asadasdda.com",
+        "ccNumber": "4444333322221111",
+        "ccExpiryMonth": 12,
+        "ccExpiryYear": 2022
+    }
+}
+
+<> 2022-11-17T201251.400.txt
+
+###
+
+GET http://localhost:8080/SauravBookstoreOrder/api/categories
+Accept: application/json
+
+<> 2022-11-17T201251.200.json
+
+###
+
+GET http://localhost:8080/SauravBookstoreOrder/api/categories
+Accept: application/json
+
+<> 2022-11-17T191647.200.json
+
+###
+

@@ -9,6 +9,8 @@ import business.customer.CustomerForm;
 import java.time.DateTimeException;
 import java.time.YearMonth;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DefaultOrderService implements OrderService {
 
@@ -69,16 +71,44 @@ public class DefaultOrderService implements OrderService {
 	}
 
 	private boolean phoneIsInvalid(String phone) {
-		return phone.replaceAll("[() -]", "").length() != 10;
+		try {
+			String pattern = "^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$";
+			Pattern regexPattern = Pattern.compile(pattern);
+			Matcher matcher = regexPattern.matcher(phone);
+
+			return !matcher.matches() || phone.replaceAll("[() -]", "").length() != 10;
+		} catch (Exception err) {
+			return true;
+		}
 	}
 
 	private boolean emailIsInvalid(String email) {
-		return email.contains(" ") || email.length() - email.replace("@", "").length() != 1 || email.endsWith(".");
+		try {
+			String pattern = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
+			Pattern regexPattern = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = regexPattern.matcher(email);
+
+			return !matcher.matches() || email.contains(" ") || email.length() -
+					email.replace("@", "").length() != 1 || email.endsWith(".");
+		} catch (Exception err) {
+			return true;
+		}
+
 	}
 
 	private boolean ccNumberIsInvalid(String ccNumber) {
-		int numberOfDigits = ccNumber.replaceAll("[ -]", "").length();
-		return (14 > numberOfDigits || numberOfDigits > 16);
+		try {
+			ccNumber = ccNumber.replaceAll("[ -]", "");
+			int numberOfDigits = ccNumber.length();
+
+			String pattern = "^[0-9]{14,16}$";
+			Pattern regexPattern = Pattern.compile(pattern);
+			Matcher matcher = regexPattern.matcher(ccNumber);
+
+			return !matcher.matches();
+		} catch (Exception err) {
+			return true;
+		}
 	}
 
 	private boolean expiryDateIsInvalid(String ccExpiryMonth, String ccExpiryYear) {
@@ -103,8 +133,15 @@ public class DefaultOrderService implements OrderService {
 			if (item.getQuantity() < 0 || item.getQuantity() > 99) {
 				throw new ApiException.InvalidParameter("Invalid quantity");
 			}
+
 			Book databaseBook = bookDao.findByBookId(item.getBookId());
-			// TODO: complete the required validations
+			if (databaseBook == null) {
+				throw new ApiException.InvalidParameter("Invalid book");
+			} else if (item.getBookForm().getPrice() != databaseBook.getPrice()) {
+				throw new ApiException.InvalidParameter("Invalid price of book");
+			} else if (item.getBookForm().getCategoryId() != databaseBook.getCategoryId()) {
+				throw new ApiException.InvalidParameter("Invalid category of book");
+			}
 		});
 	}
 
