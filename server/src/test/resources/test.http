@@ -1,0 +1,87 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+GET http://localhost:8080/SauravBookstoreOrder/api/categories
+Accept: application/json
+
+###
+
+POST http://localhost:8080/SauravBookstoreOrder/api/orders
+Content-Type: application/json
+
+{
+  "cart": {
+    "itemArray": [
+      {
+        "book": {
+          "bookId": 1023,
+          "title": "Beauty and the Goblin King",
+          "author": "Lidiya Foxglove",
+          "price": 735,
+          "isPublic": true,
+          "isFeatured": true,
+          "categoryId": 1004,
+          "description": "batgk.webp",
+          "rating": 5
+        },
+        "quantity": 7
+      },
+      {
+        "book": {
+          "bookId": 1022,
+          "title": "Howl at the Moon",
+          "author": "Deborah Wilde",
+          "price": 499,
+          "isPublic": true,
+          "isFeatured": true,
+          "categoryId": 1004,
+          "description": "hatm.webp",
+          "rating": 8
+        },
+        "quantity": 9
+      },
+      {
+        "book": {
+          "bookId": 1021,
+          "title": "Curse of Shadows and Thorns",
+          "author": "LJ Andrews",
+          "price": 2699,
+          "isPublic": true,
+          "isFeatured": false,
+          "categoryId": 1004,
+          "description": "cosat.webp",
+          "rating": 6
+        },
+        "quantity": 6
+      },
+      {
+        "book": {
+          "bookId": 1020,
+          "title": "Once Upon A Time",
+          "author": "Demelza Carlton",
+          "price": 1235,
+          "isPublic": false,
+          "isFeatured": false,
+          "categoryId": 1004,
+          "description": "ouat.webp",
+          "rating": 8
+        },
+        "quantity": 7
+      }
+    ]
+  },
+  "customerForm": {
+    "name": "adsad",
+    "address": "sdfgsdsaf",
+    "phone": "(540) 757-O663",
+    "email": "asds@asadasdda.com",
+    "ccNumber": "4444333322221111",
+    "ccExpiryMonth": 12,
+    "ccExpiryYear": 2022
+  }
+}
