@@ -112,7 +112,9 @@ public class DefaultOrderService implements OrderService {
 	}
 
 	private boolean expiryDateIsInvalid(String ccExpiryMonth, String ccExpiryYear) {
-		if (Integer.parseInt(ccExpiryMonth) > 12 || Integer.parseInt(ccExpiryMonth) < 1) {
+		if (ccExpiryMonth == null || ccExpiryMonth.isEmpty() || ccExpiryYear == null || ccExpiryYear.isEmpty()) {
+			return true;
+		} else if (Integer.parseInt(ccExpiryMonth) > 12 || Integer.parseInt(ccExpiryMonth) < 1) {
 			return true;
 		}
 
