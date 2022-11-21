@@ -38,14 +38,15 @@ const months: string[] = [
 ];
 
 const form = reactive({
-  name: "asdsda",
-  address: "asadsdas",
-  phone: "5405578686",
-  email: "asds@asda.com",
-  ccNumber: "4444333322221111",
+  name: "",
+  address: "",
+  phone: "",
+  email: "",
+  ccNumber: "",
   ccExpiryMonth: new Date().getMonth() + 1,
   ccExpiryYear: new Date().getFullYear(),
   checkoutStatus: "",
+  checkoutMessage: "",
 });
 
 const rules = {
@@ -124,6 +125,7 @@ async function submitOrder() {
       })
       .catch((reason) => {
         form.checkoutStatus = "SERVER_ERROR";
+        form.checkoutMessage = reason;
         console.log("Error placing order", reason);
       });
   }
@@ -622,6 +624,13 @@ label {
 
               <div v-else-if="form.checkoutStatus === 'OK'" class="okay-status">
                 Order placed...
+              </div>
+
+              <div
+                v-else-if="form.checkoutStatus === 'SERVER_ERROR'"
+                class="error-status"
+              >
+                {{ form.checkoutMessage }}
               </div>
 
               <div v-else class="error-status">
