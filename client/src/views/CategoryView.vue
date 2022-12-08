@@ -4,13 +4,26 @@ import CategoryNav from "@/components/CategoryNav.vue";
 import CategoryBookList from "@/components/CategoryBookList.vue";
 import { useRoute } from "vue-router";
 import { useBookStore } from "@/stores/BookStore";
+import { useCategoryStore } from "@/stores/CategoryStore";
+import router from "@/router/index";
+
 const route = useRoute();
 const bookStore = useBookStore();
+const categoryStore = useCategoryStore();
 
 watch(
   () => route.params.name,
   (newName) => {
-    bookStore.fetchBooks(newName as string);
+    // categoryStore.setSelectedCategoryName(newName as string);
+    bookStore
+      .fetchBooks(newName as string)
+      .then((res) => {
+        console.log("then", res);
+      })
+      .catch((err) => {
+        console.log("catch", err);
+        router.push("/not-found");
+      });
   },
   { immediate: true }
 );

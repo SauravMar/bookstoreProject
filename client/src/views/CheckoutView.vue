@@ -19,6 +19,10 @@ const cart = cartStore.cart;
 
 const navigateBack = function () {
   let url = localStorage.getItem("path");
+  if (url == null || !url.includes("category")) {
+    url = "/category/Classics";
+  }
+
   router.push(url);
 };
 
@@ -121,6 +125,7 @@ async function submitOrder() {
       })
       .then(() => {
         form.checkoutStatus = "OK";
+        cartStore.clearCart();
         router.push({ name: "confirmation-view" });
       })
       .catch((reason) => {

@@ -22,7 +22,10 @@ const clearCart = function () {
 
 const navigateBack = function () {
   let url = localStorage.getItem("path");
-  console.log(url);
+  if (url == null || !url.includes("category")) {
+    url = "/category/Classics";
+  }
+
   router.push(url);
 };
 </script>

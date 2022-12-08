@@ -1,5 +1,16 @@
 <script setup lang="ts">
 import HeaderDropdown from "@/components/HeaderDropdown.vue";
+import ConfirmationTable from "@/components/ConfirmationTable.vue";
+
+import { useCategoryStore } from "@/stores/CategoryStore";
+
+const categoryStore = useCategoryStore();
+
+import { useOrderDetailsStore } from "@/stores/OrderDetailsStore";
+import { computed } from "vue";
+
+const orderDetailsStore = useOrderDetailsStore();
+const orderDetails = orderDetailsStore.orderDetails;
 </script>
 <style scoped>
 .home-page {
@@ -14,6 +25,10 @@ import HeaderDropdown from "@/components/HeaderDropdown.vue";
   width: 100%;
   padding: 2% 0;
   height: var(--default-viewing-area-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .welcome-container {
@@ -120,6 +135,12 @@ nav {
       </nav>
     </div>
 
-    <div class="outer-welcome-container">Welcome to Confirmation Page!</div>
+    <div v-if="orderDetailsStore.hasOrderDetails()">
+      <confirmation-table></confirmation-table>
+    </div>
+    <div v-else class="outer-welcome-container">
+      <h1>Confirmation Details not Found</h1>
+      <p>There appears to be nothing to find here.</p>
+    </div>
   </div>
 </template>

@@ -3,8 +3,9 @@ package business;
 
 import business.book.BookDao;
 import business.book.BookDaoJdbc;
-import business.order.DefaultOrderService;
-import business.order.OrderService;
+import business.customer.CustomerDao;
+import business.customer.CustomerDaoJdbc;
+import business.order.*;
 import business.category.CategoryDao;
 import business.category.CategoryDaoJdbc;
 
@@ -15,15 +16,25 @@ public class ApplicationContext {
     private CategoryDao categoryDao;
     private BookDao bookDao;
     private OrderService orderService;
+    private OrderDao orderDao;
+    private LineItemDao lineItemDao;
+    private CustomerDao customerDao;
 
     public static ApplicationContext INSTANCE = new ApplicationContext();
 
     private ApplicationContext() {
         categoryDao = new CategoryDaoJdbc();
         bookDao = new BookDaoJdbc();
+        orderDao = new OrderDaoJdbc();
+        lineItemDao = new LineItemDaoJdbc();
+        customerDao = new CustomerDaoJdbc();
 
         orderService = new DefaultOrderService();
         ((DefaultOrderService) orderService).setBookDao(bookDao);
+        ((DefaultOrderService) orderService).setOrderDao(orderDao);
+        ((DefaultOrderService) orderService).setCustomerDao(customerDao);
+        ((DefaultOrderService) orderService).setLineItemDao(lineItemDao);
+        ((DefaultOrderService) orderService).setConfirmationNumber();
     }
 
     public CategoryDao getCategoryDao() {
@@ -36,5 +47,17 @@ public class ApplicationContext {
 
     public OrderService getOrderService() {
         return orderService;
+    }
+
+    public OrderDao getOrderDao() {
+        return orderDao;
+    }
+
+    public CustomerDao getCustomerDao() {
+        return customerDao;
+    }
+
+    public LineItemDao getLineItemDao() {
+        return lineItemDao;
     }
 }

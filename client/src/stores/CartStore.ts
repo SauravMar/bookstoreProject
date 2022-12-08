@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { ShoppingCart } from "@/models/ShoppingCart";
 import { BookItem, CustomerForm, OrderDetails } from "@/types";
 import { apiUrl } from "@/services/ApiService";
+import { useOrderDetailsStore } from "@/stores/OrderDetailsStore";
 
 const CART_STORAGE_KEY = "ShoppingCart";
 
@@ -40,10 +41,9 @@ export const useCartStore = defineStore("CartStore", {
     },
     async placeOrder(customerForm: CustomerForm) {
       const order = { cart: this.cart, customerForm: customerForm };
-      console.log(JSON.stringify(order));
-
       const url = apiUrl + "orders";
-      const orderDetails: OrderDetails = await fetch(url, {
+
+      const orderDetails = await fetch(url, {
         mode: "cors",
         cache: "no-cache",
         credentials: "same-origin",
@@ -54,8 +54,19 @@ export const useCartStore = defineStore("CartStore", {
         referrer: "client",
         method: "POST", // or 'PUT'
         body: JSON.stringify(order),
-      }).then((response) => response.json());
-      this.clearCart();
+      })
+        .then((response) => response.json())
+        .catch((err) => err);
+
+      if (orderDetails != null && !("error" in orderDetails)) {
+        const orderDetailsStore = useOrderDetailsStore();
+        orderDetailsStore.clearOrderDetails();
+        orderDetailsStore.setOrderDetails(orderDetails);
+      } else {
+        if ("error" in orderDetails) {
+          throw orderDetails["error"];
+        }
+      }
     },
   },
 });

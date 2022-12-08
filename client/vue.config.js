@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: "/SauravBookstoreOrder/",
+  publicPath: "/SauravBookstoreTransact/",
   lintOnSave: true,
 };

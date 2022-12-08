@@ -1,5 +1,7 @@
 package api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.core.MediaType;
@@ -7,6 +9,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,9 +35,11 @@ public class ApiExceptionHandler implements
 
 	private Response makeResponse(Exception exception, Response.Status status) {
 		try {
-			StringWriter writer = new StringWriter();
-			writer.append(status.getReasonPhrase()).append(" ").append(String.valueOf(status.getStatusCode())).append("\n\n").append(exception.getMessage());
-			return Response.status(status).entity(writer.getBuffer().toString()).type(MediaType.TEXT_PLAIN).build();
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("status_reason_phrase", status.getReasonPhrase());
+			map.put("error", exception.getMessage());
+
+			return Response.status(status).entity(new ObjectMapper().writeValueAsString(map)).type(MediaType.APPLICATION_JSON).build();
 		} catch (Exception e) {
 			logger.log(Level.INFO, e, () -> "Problem attempting to map an Exception to a json response");
 			logger.log(Level.INFO, exception, () -> "Original Exception");
